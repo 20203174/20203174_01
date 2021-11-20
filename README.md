@@ -1,4 +1,4 @@
-## assignment_20203174
+# assignment_20203174
 
 > shellscript
 >> getopt
@@ -10,11 +10,11 @@
 >> 
 >> awk
 
-* shellscript
+## shellscript
 
 기존에 쓰던 방식에서 getopt, getopts를 이용해서 좀 더 우아한 옵션을 줄 수 있다.
 
-** 기존에 쓰던 방식
+* 기존에 쓰던 방식
 
 `date +%Y-%m-%d`
 
