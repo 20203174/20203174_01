@@ -51,5 +51,5 @@ echo "$RET"
 ```
 쉘 스크립트나 함수가 파라미터(argument)를 받는 기본 방식
 
-![shell 변수](https://user-images.githubusercontent.com/93987703/142729665-9d6e1f8c-6d12-45d2-ad37-17a222c461fe.jpg)
+!<img src="https://user-images.githubusercontent.com/93987703/142729665-9d6e1f8c-6d12-45d2-ad37-17a222c461fe.jpg" width="50%" height="50%"/>
 
