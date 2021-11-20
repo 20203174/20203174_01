@@ -61,3 +61,51 @@ echo "$RET"
 |---|---|
 |option_string|옵션을 정의하는 문자, 뒤에 콜론(:)이 있으면 옵션값을 받는 다는 의미|
 |varname|옵션 명(d, u, f)을 받을 변수, OPTARG 변수에는 실제 옵션의 값이 세팅|
+
+getopts를 이용한 date2.sh을 작성해보자
+
+```
+#!/bin/bash
+
+print_try(){
+	echo "Try 'date2.sh -h' for more information"
+	exit 1
+}
+
+print_help(){
+	echo "usage: date2.sh -d <diffs> -u <unit> [-f format]"
+	exit 1
+}
+
+while getopts d:u:f:h opt
+do
+	echo "opt=$opt, OPTARG=$OPTARG"
+	case $opt in
+		d)
+			D=$OPTARG;;
+		u)
+			U=$OPTARG;;
+		f)
+			F=$OPTARG;;
+		h)
+			print_help;;
+		*)
+			print_try;;
+	esac
+done
+
+if [ "$F"="" ]; then
+	F=+"%Y-%m-%d"
+fi
+RET=$(date $F --date="$D $U")
+echo "$RET"
+```
+
+이번에는 긴 옵션을 줄 수도 있다.
+
+예를 들어
+
+`date3.sh --diffs 3 --unit month --format +%Y-%m-%d`
+
+2020-03-20
+
