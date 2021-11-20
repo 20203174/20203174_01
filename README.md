@@ -67,34 +67,37 @@ getopts를 이용한 date2.sh을 작성해보자
 ```sh
 #!/bin/bash
 
-print_try(){
+print_try(){  #-h옵션을 넣으면 사용법이 출력됨을 알려줌
 	echo "Try 'date2.sh -h' for more information"
 	exit 1
 }
 
-print_help(){
+print_help(){  #사용법을 출력해줌
 	echo "usage: date2.sh -d <diffs> -u <unit> [-f format]"
 	exit 1
 }
 
-while getopts d:u:f:h opt
+while getopts d:u:f:h opt 
+# d, u, f, h는 각각 입력 받는 옵션 값
+# 뒤에 콜론(:)이 붙으면 옵션에 해당하는 인자값이 입력된다는 의미
+# 각각 옵션은 opt변수로 들어간다.
 do
-	echo "opt=$opt, OPTARG=$OPTARG"
+	# echo "opt=$opt, OPTARG=$OPTARG" 출력할 때 확인용으로 사용
 	case $opt in
-		d)
+		d)  #d옵션에 해당하는 인자값을 변수 D에 넣음
 			D=$OPTARG;;
-		u)
+		u)  #u옵션에 해당하는 인자값을 변수 U에 넣음
 			U=$OPTARG;;
-		f)
+		f)  #f옵션에 해당하는 인자값을 변수 F에 넣음
 			F=$OPTARG;;
-		h)
+		h)  #사용법을 화면에 출력
 			print_help;;
 		*)
 			print_try;;
 	esac
 done
 
-if [ "$F"="" ]; then
+if [ "$F"="" ]; then  #
 	F=+"%Y-%m-%d"
 fi
 RET=$(date $F --date="$D $U")
