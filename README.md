@@ -1,1 +1,11 @@
-# 20203174_01
+## assignment_20203174
+
+> shellscript
+>> getopt
+>>
+>> getopts
+>
+> command
+>> sed
+>> 
+>> awk
