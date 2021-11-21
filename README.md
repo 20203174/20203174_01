@@ -65,10 +65,10 @@ echo "$RET"
 |varname|옵션 명(d, u, f)을 받을 변수, OPTARG 변수에는 실제 옵션의 값이 세팅|
 
 >getopts 명령은 매개변수 리스트에서 옵션 및 옵션 인수를 검색하는 Korn/POSIX 쉘 내장 명령이다. 옵션은 +(더하기 부호) 또는 -(빼기 부호)로 시작하고 그 뒤에 문자가 온다. + 또는 -로 시작하지 않는 옵션은 OptionString을 종료한다. getopts 명령은 호출될 때마다 Name의 다음 옵션 값과 쉘 변수 OPTIND에서 처리될 다음 인수의 색인을 배치한다. 쉘이 호출될 때마다 OPTIND는 1로 초기화된다. 옵션이 +로 시작되는 경우 +는 Name의 값 앞에 추가된다.
-
-OptionString의 문자 뒤에는 :(콜론)이 오면 옵션에 인수가 있는 것으로 간주된다. 옵션에 옵션-인수가 필요한 경우 getopts 명령은 이를 변수 OPTARG에 배치한다.
-
-getopts를 이용한 date2.sh을 작성해보자
+>
+> OptionString의 문자 뒤에는 :(콜론)이 오면 옵션에 인수가 있는 것으로 간주된다. 옵션에 옵션-인수가 필요한 경우 getopts 명령은 이를 변수 OPTARG에 배치한다.
+>
+> getopts를 이용한 date2.sh을 작성해보자
 
 ```sh
 #!/bin/bash
