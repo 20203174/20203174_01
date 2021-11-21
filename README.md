@@ -109,6 +109,12 @@ echo "$RET"
 * getopt
 
 이번에는 긴 옵션을 줄 수도 있다.
+|usage|getopt -o/--options shortops [-l/--longoptioins Longopts] [-n/--name progname] [--] parameters|
+|---|---|
+|shortopts|옵션을 정의하는 문자|
+|Longopts|긴 옵션을 정의하는 문자(--diffs와 같은 긴 옵션 정의), 콤마로 구분한다|
+|progname|오류 발생시 리포팅할 프로그램 명칭(현재 쉘 스크립트 파일명)|
+|parameters|옵션에 해당하는 실제 명령 구문(보통은 모든 파라미터를 뜻하는 $@사용)|
 
 예를 들어
 
