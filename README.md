@@ -277,7 +277,27 @@ sed 명령어는 동작시 내부적으로 두 개의 워크스페이스를 사�
 > 
 > file로부터 ref라는 단어를 찾으면 그 찾은 행 뒤에 addfile의 내용을 붙여 출력한다.
 
+> 5. 파일에다가 쓰는 w명령어 
+> 
+> `sed -n '/north/w outputfile' file`
+> 
+> file로부터 north라는 패턴이 포함된 행을 찾으면 그 선택한 행들을 outputfile에다가 저장한다.
 
+> 6. 문자열 추가(append)하는 a\
+> 
+> `sed 'END$/a\THANK YOU FOR READING' file`
+> 
+> file에서 END로 끝나는 행을 찾아, 그 다음에 'THANK YOU FOR READING'을 추가한다.
+
+> 7. 패턴 스페이스와 홀드 스페이스 
+> 
+> `sed -e '/northeast/h' -e '$G' file`
+> 
+> file에서 northeast라는 단어를 찾은 후 그 행들을 홀드스페이스에 저장해 놓는다.(h명령어)
+> 
+> 그리고 $는 마지막 행을 의미하기 때문에 마지막 행에 홀드 스페이스 내용을 패턴 스페이스에 복사한다. 대문자 G의 경우 패턴 스페이스에 내용이 있을 경우 뒤에 추가하는 명령어로, 텍스트 맨 뒤에 복사된다.
+> 
+> 즉, 패턴 northeast를 포함하는 행들은 모두 홀드 스페이스로 복사되었다가 파일의 마지막에 추가된다.
 
 
 
