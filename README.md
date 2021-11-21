@@ -184,4 +184,4 @@ echo "$RET"
 > awk는 파일로부터 레코드(record)를 선택하고, 선택된 레코드에 포함된 값을 조작하거나 데이터화하는 것을 목적으로 사용하는 프로그램이다. 즉, awk 명령의 입력으로 지정된 파일로부터 데이터를 분류한 다음, 분류된 텍스트 데이터를 바탕으로 패턴 매칭 여부를 검사하거나 데이터 조작 및 연산 등의 액션을 수행하고, 그 결과를 출력하는 기능을 수행한다.
 
 > awk명령으로 할 수 있는 일들
-<img src="https://user-images.githubusercontent.com/93987703/142756033-1a9160ea-6689-40cd-9f5c-1deb2e47503f.png" width="50%" height="50%"/>
+<img src="https://user-images.githubusercontent.com/93987703/142756033-1a9160ea-6689-40cd-9f5c-1deb2e47503f.png" width="70%" height="70%"/>
