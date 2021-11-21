@@ -56,6 +56,8 @@ echo "$RET"
 그런데 이렇게 주고 싶을 수 있다.
 `. date1.sh -d 3 -u day -f`
 
+* getopts
+
 이럴 때 getopts를 사용하면 된다.
 |usage|getopts option_string varname|
 |---|---|
@@ -103,6 +105,8 @@ fi
 RET=$(date $F --date="$D $U")
 echo "$RET"
 ```
+
+* getopt
 
 이번에는 긴 옵션을 줄 수도 있다.
 
