@@ -233,7 +233,7 @@ sed 명령어는 편집에 특화된 명령어다. 수정, 치환, 삭제, 글 �
 
 sed 명령어는 동작시 내부적으로 두 개의 워크스페이스를 사용하는데, (마치 복사 붙여넣기의 임시 저장소 클립보드와 같다) 이 두 버퍼를 패턴 스페이스와 홀드 스페이스라고 한다.
 
-<img s="https://user-images.githubusercontent.com/93987703/142757071-6c005978-f228-4fe3-8a96-3864ee7268ab.png" width="70%" height="70%"/>
+<img src="https://user-images.githubusercontent.com/93987703/142757071-6c005978-f228-4fe3-8a96-3864ee7268ab.png" width="70%" height="70%"/>
 
 패턴 버퍼는 sed가 파일을 라인 단위로 읽을 때 그 읽힌 라인이 저장되는 임시 공간이다. 
 
