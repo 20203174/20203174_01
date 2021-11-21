@@ -115,33 +115,39 @@ echo "$RET"
 ```sh
 #!/bin/bash
 
-print_try(){
+print_try(){  #-h옵션을 주면 사용법을 출력할 수 있다고 알려줌
 	echo "Try 'date3.sh -h' for more information"
 	exit 1
 }
 
-print_help(){
+print_help(){  #사용법을 출력해줌
 	echo "usage: date3.sh -d <diffs> -u <unit> [-f format]"
 	exit 1
 }
 
-options="$(getopt -o d:u:f:h -l diffs:,unit:,format:,help - "$@")"
-eval set --$options
+options="$(getopt -o d:u:f:h -l diffs:,unit:,format:,help - "$@")"  
+# 짧은 옵션을 받는 d, u, f, h
+# 긴 옵션을 받는 diffs, unit, format, help
+# 입력 받는 인자가 있는 경우 콜론(:)을 붙임
+eval set --$options  
+# 문자열을 명령어처럼 사용하는 eval
+# set은 잘라주는 역할을 함
+# 하이픈(-)하이픈(-)이 마지막에 추가되어서 총 7개의 set생김
 
 while true
 do
-	# echo "$1,$2	[$@]"
+	# echo "$1,$2	[$@]" 확인용으로 사용
 	case $1 in
-		-d|--diffs)
+		-d|--diffs)  #-d 또는 --diffs를 입력한 경우
 			D=$2
 			shift 2;;
-		-u|--unit)
+		-u|--unit)  #-u 또는 --unit를 입력한 경우
 			U=$2
 			shift 2;;
-		-f|--format)
+		-f|--format)  #-f 또는 --format를 입력한 경우
 			F=$2
 			shift 2;;
-		-h|--help)
+		-h|--help)  #-h 또는 --help를 입력한 경우
 			print_help;;
 		--)
 			break;;
@@ -150,9 +156,10 @@ do
 	esac
 done
 
-if [ "$F"="" ]; then
+if [ "$F"="" ]; then  #format값으로 아무것도 입력 되지 않았을 때 default값을 넣어줌
 	F=+"%Y-%m-%d"
 fi
+
 RET=$(date $F --date="$D $U")
 echo "$RET"
 ```
