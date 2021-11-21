@@ -180,8 +180,25 @@ echo "$RET"
 
 > 대부분의 리눅스 명령들이, 그 명령의 이름만으로 대략적인 기능이 예상되는 것과 다르게, awk 명령은 이름에 그 기능을 의미하는 단어나 약어가 포함되어 있지 않다. awk는 최초에 awk 기능을 디자인한 사람들의 이니셜을 조합하여 만든 이름이다.
 
-
 > awk는 파일로부터 레코드(record)를 선택하고, 선택된 레코드에 포함된 값을 조작하거나 데이터화하는 것을 목적으로 사용하는 프로그램이다. 즉, awk 명령의 입력으로 지정된 파일로부터 데이터를 분류한 다음, 분류된 텍스트 데이터를 바탕으로 패턴 매칭 여부를 검사하거나 데이터 조작 및 연산 등의 액션을 수행하고, 그 결과를 출력하는 기능을 수행한다.
 
 > awk명령으로 할 수 있는 일들
 <img src="https://user-images.githubusercontent.com/93987703/142756033-1a9160ea-6689-40cd-9f5c-1deb2e47503f.png" width="70%" height="70%"/>
+
+> awk는 기본적으로 입력 데이터를 라인(line) 단위의 레코드(Record)로 인식한다. 그리고 각 레코드에 들어 있는 텍스트는 공백 문자(space, tab)로 구분된 필드(Field)들로 분류되는데, 이렇게 식별된 레코드 및 필드의 값들은 awk 프로그램에 의해 패턴 매칭 및 다양한 액션의 파라미터로 사용된다. 
+
+<img src="https://user-images.githubusercontent.com/93987703/142756132-6a996afe-d0d2-4a06-9444-6ff703ad2af7.png" width="70%" height="70%"/>
+
+> awk명령어 옵션
+
+|usage|awk [OPTION...] [awk program] [ARGUMENT...]|
+|---|---|
+|OPTION(-F)|필드 구분 문자 지정|
+|OPTION(-f)|awk program 파일 경로 지정|
+|OPTION(-v)|awk program 에서 사용될 특정 변수값 지정|
+|awk program|-f옵션이 사용되지 않은 경우, awk가 실행할 awk program 코드 지정|
+|ARGUMENT|입력 파일 지정 또는 변수값 지정|
+
+> 예제
+> 
+
